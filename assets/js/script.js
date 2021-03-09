@@ -3,32 +3,21 @@ var c = 0;
 
 function add() {
 
-    let name = document.querySelector("#name").value;    
-    let date = document.querySelector("#date").value;
-    let amount = document.querySelector("#amount").value;
-    let tabela = document.querySelector("#tabela");
-
-    tabela.innerHTML += "<tr> <td>...</td> <td>...</td> <td>...</td> <td>...</td> </tr>";
-}
-
-/*
-function add() {
-
-    let name = document.querySelector("#name").value;    
-    let date = document.querySelector("#date").value;
-    let amount = document.querySelector("#amount").value;
+    let name = document.querySelector("#name");    
+    let date = document.querySelector("#date");
+    let amount = document.querySelector("#amount");
 
     let tabela = document.querySelector("#tabela");
-    let row = tabela.insertRow(r);
-    let newCell = row.insertCell(c);
+    let row = tabela.insertRow(0);
+    let cell1 = row.insertCell(0);
+    let cell2 = row.insertCell(1);
+    let cell3 = row.insertCell(2);
+    let cell4 = row.insertCell(3);
 
-    newCell.innerHTML = "<td>" + name + "</td>";   
-    newCell.innerHTML = "<td>" + date + "</td>";
-    newCell.innerHTML = "<td>" + amount + "</td>";
-    newCell.innerHTML = "<td><button onclick='del(this)'> X </button></td>";
 
-    r++;
-    c++;
+    cell1.innerHTML = "<td>" + name.value + "</td>";   
+    cell2.innerHTML = "<td>" + date.value + "</td>";
+    cell3.innerHTML = "<td>" + amount.value + "</td>";
+    cell4.innerHTML = "<td><button onclick='del(this)'> X </button></td>";
     
 }
-*/
