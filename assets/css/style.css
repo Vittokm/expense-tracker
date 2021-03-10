@@ -27,14 +27,11 @@ body {
 #main h1 {
     font-size: 30px;
     text-transform: uppercase;
-}
-#main h2 {
-    margin-top: -15px;
+    margin: 0;
 }
 fieldset {
     min-width: 300px;
     max-width: 1140px;
-    min-height: 200px;
     display: flex;
     flex-direction: column;
     padding: 15px;
@@ -55,16 +52,17 @@ fieldset #botao {
     width: 50%;
     align-self: center;
 }
-#tabela {
-    margin-top: -35px;
-    border: 1px solid #777;
-    width: 93%;
+#tbl {
+    display: none;
     border-collapse: collapse;
 }
-#tabela th {
+#tbl th {
     background-color: #BBB;
 }
-#tabela th, #tabela th {
+#tbl tr:nth-child(odd) {
+    background-color: #EEE;
+}
+#tbl th, #tbl td {
     border: 1px solid #777;
     padding: 7px 10px;
 
