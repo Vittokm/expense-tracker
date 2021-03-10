@@ -1,34 +1,41 @@
-var r = 1;
-var c = 0;
-
+var num = 1;
 function add() {
-
-    let name = document.querySelector("#name").value;    
-    let date = document.querySelector("#date").value;
-    let amount = document.querySelector("#amount").value;
-    let tabela = document.querySelector("#tabela");
-
-    tabela.innerHTML += "<tr> <td>...</td> <td>...</td> <td>...</td> <td>...</td> </tr>";
-}
-
-/*
-function add() {
-
-    let name = document.querySelector("#name").value;    
-    let date = document.querySelector("#date").value;
-    let amount = document.querySelector("#amount").value;
-
-    let tabela = document.querySelector("#tabela");
-    let row = tabela.insertRow(r);
-    let newCell = row.insertCell(c);
-
-    newCell.innerHTML = "<td>" + name + "</td>";   
-    newCell.innerHTML = "<td>" + date + "</td>";
-    newCell.innerHTML = "<td>" + amount + "</td>";
-    newCell.innerHTML = "<td><button onclick='del(this)'> X </button></td>";
-
-    r++;
-    c++;
     
+    let name = document.querySelector("#name");    
+    let date = document.querySelector("#date");
+    let amount = document.querySelector("#amount");
+
+    let tbl = document.querySelector("#tbl");
+
+    tbl.style.display = "flex";
+
+    let row = tbl.insertRow(num);
+    let cell1 = row.insertCell(0);
+    let cell2 = row.insertCell(1);
+    let cell3 = row.insertCell(2);
+    let cell4 = row.insertCell(3);
+
+    cell1.innerHTML = name.value;   
+    cell2.innerHTML = date.value;
+    cell3.innerHTML = amount.value;
+    cell4.innerHTML = "<button onclick='del(this)'> X </button>";
+    
+    name.value = "";
+    date.value = "";
+    amount.value = "";
+
+    num++;
 }
-*/
+
+function del() {
+    
+    let del = document.querySelector("#tbl");
+    num--;
+
+    if (num <= 1) {
+        del.querySelector("td").parentElement.remove();
+        del.style.display = "none";
+    } else {
+        del.querySelector("td").parentElement.remove();
+    }
+}
